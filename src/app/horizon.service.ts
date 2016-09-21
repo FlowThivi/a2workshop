@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { HORIZON_CONFIG } from './app.config';
 
 const Horizon = require('@horizon/client');
 
@@ -12,7 +13,7 @@ export class HorizonService {
   constructor() { }
 
   public connect(): Observable<any> {     
-    this._horizon = Horizon({ host: '127.0.0.1:8181'});
+    this._horizon = Horizon(HORIZON_CONFIG);
 
     return Observable.create(observer => {
       this._horizon.onReady(status => {
