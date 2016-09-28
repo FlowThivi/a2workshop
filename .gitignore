@@ -23,10 +23,15 @@
 npm-debug.log
 testem.log
 /typings
+**/*.log
 
 # e2e
 /e2e/*.js
 /e2e/*.map
+
+#horizon
+rethinkdb_data
+.hz/secrets.toml
 
 #System Files
 .DS_Store
