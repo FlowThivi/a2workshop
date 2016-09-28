@@ -31,7 +31,6 @@ testem.log
 
 #horizon
 rethinkdb_data
-.hz/secrets.toml
 
 #System Files
 .DS_Store
