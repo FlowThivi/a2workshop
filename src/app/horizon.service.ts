@@ -6,9 +6,7 @@ const Horizon = require('@horizon/client');
 
 @Injectable()
 export class HorizonService {
-
   private _horizon: any;
-  private _status: {} | Boolean = false;
 
   constructor() { }
 
@@ -16,10 +14,7 @@ export class HorizonService {
     this._horizon = Horizon(HORIZON_CONFIG);
 
     return Observable.create(observer => {
-      this._horizon.onReady(status => {
-        this._status = status;
-        observer.next(status);
-      });
+      this._horizon.onReady(status => observer.next(status));
 
       this._horizon.connect();
     });
