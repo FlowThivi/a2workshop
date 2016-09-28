@@ -8,16 +8,9 @@ const Horizon = require('@horizon/client');
 export class HorizonService {
   private _horizon: any;
 
-  constructor() { }
-
-  public connect(): Observable<any> {     
+  constructor() {
     this._horizon = Horizon(HORIZON_CONFIG);
-
-    return Observable.create(observer => {
-      this._horizon.onReady(status => observer.next(status));
-
-      this._horizon.connect();
-    });
+    this._horizon.connect();
   }
 
 }

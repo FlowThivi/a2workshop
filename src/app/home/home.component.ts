@@ -12,8 +12,6 @@ export class HomeComponent implements OnInit {
   constructor(private _hz: HorizonService) { }
 
   ngOnInit() {
-    this._hz.connect()
-      .subscribe();
   }
 
 }
